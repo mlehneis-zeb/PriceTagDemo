@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"terminal.integrated.env.windows": {
+			"PATH": "${env:PATH};C:\\UserPrograms\\node.js\\node-v8.12.0-win-x64;c:\\UserPrograms\\git\\bin;C:\\Users\\mlehneis\\Code\\symbioticon2018-zUP\\symbioticon2018-zUP-webapp\\node_modules\\@angular\\cli\\bin"
+		}
+	}
+}

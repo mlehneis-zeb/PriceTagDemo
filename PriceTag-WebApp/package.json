@@ -1,0 +1,9 @@
+{
+  "name": "PriceTag-Webapp",
+  "displayName": "PriceTag Web application",
+  "dependencies": {
+    "firebase-admin": "~6.0.0",
+    "firebase-functions": "^2.1.0",
+    "vue": "^2.5.17"
+  }
+}
