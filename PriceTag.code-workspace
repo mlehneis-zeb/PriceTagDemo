@@ -6,6 +6,7 @@
 	],
 	"settings": {
 		"terminal.integrated.env.windows": {
+			"GOOGLE_APPLICATION_CREDENTIALS": "C:\\Users\\mlehneis\\Code\\PriceTag-454921dc8838.json",
 			"PATH": "${env:PATH};C:\\UserPrograms\\node.js\\node-v8.12.0-win-x64;c:\\UserPrograms\\git\\bin;C:\\Users\\mlehneis\\Code\\symbioticon2018-zUP\\symbioticon2018-zUP-webapp\\node_modules\\@angular\\cli\\bin"
 		}
 	}

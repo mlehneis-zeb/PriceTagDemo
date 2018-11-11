@@ -40,19 +40,23 @@ exports.translateText = functions.https.onCall((data, ctx) => {
         throw new Error("Invalid argument 'lang': invalid language");
     
     // Translates some text into Russian
-    var trans = "empty";
-    translate.translate(data.text, data.lang).then(results => {
-            trans = results[0];
-            console.error(results);
-            return results[0];
+    let transPromise = translate.translate(data.text, data.lang).then(results => {
+
+            let translations = results[0];
+            translations = Array.isArray(translations)
+              ? translations
+              : [translations];
+            //   console.log(results);
+            //   console.log(results[1].data.translations);
+            //   console.log(results[1].data.translations[0]);
+            //  const trans = translations[0];
+            return {
+                translatedText: String(translations[0])
+            }
+            
         }).catch(err => {
-            trans = "error" + err;
-            //throw Error("External service returned with error: " + err);
+           throw Error("External service returned with error: " + err);
         });
 
-    if (trans === "empty") throw new Error("no result");
-
-    return {
-        translatedText: trans
-    }    
+    return transPromise;
 });
