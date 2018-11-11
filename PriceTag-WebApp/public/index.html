@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My hello world</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-functions.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyABk66A4OYCUIfj9ZcufsyFaoNwcFYDtxk",
+            authDomain: "pricetag-bce06.firebaseapp.com",
+            databaseURL: "https://pricetag-bce06.firebaseio.com",
+            projectId: "pricetag-bce06",
+            storageBucket: "pricetag-bce06.appspot.com",
+            messagingSenderId: "489374975714"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+
+</head>
+
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <input v-model="inputText" type="text" />
+        <select v-model="inputLang">
+            <option value="EN">English</option>
+        </select>
+        <button v-on:click="onButtonClick">Übersetzen</button>
+        <input v-model="newText" type="text" readonly="readonly" />
+    </div>
+    <script src="index.js"></script>
+    <script>
+        var firstFunction = firebase.functions().httpsCallable("firstFunction");
+        firstFunction({v1: 3, v2: 4}).then(function(result) {
+            app.message = "Hello " + result.data.result;
+        })
+    </script>
+</body>
+
+</html>
