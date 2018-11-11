@@ -1,5 +1,5 @@
 {
-  "name": "PriceTag-Webapp",
+  "name": "pricetag-webapp",
   "displayName": "PriceTag Web application",
   "dependencies": {
     "firebase-admin": "~6.0.0",
