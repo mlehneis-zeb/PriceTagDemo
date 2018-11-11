@@ -39,7 +39,20 @@ exports.translateText = functions.https.onCall((data, ctx) => {
     if (!(data.lang === "EN"))
         throw new Error("Invalid argument 'lang': invalid language");
     
+    // Translates some text into Russian
+    var trans = "empty";
+    translate.translate(data.text, data.lang).then(results => {
+            trans = results[0];
+            console.error(results);
+            return results[0];
+        }).catch(err => {
+            trans = "error" + err;
+            //throw Error("External service returned with error: " + err);
+        });
+
+    if (trans === "empty") throw new Error("no result");
+
     return {
-        translatedText: "translation"
+        translatedText: trans
     }    
 });
