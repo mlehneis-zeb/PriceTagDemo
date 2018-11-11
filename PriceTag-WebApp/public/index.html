@@ -35,12 +35,6 @@
         <input v-model="newText" type="text" readonly="readonly" />
     </div>
     <script src="index.js"></script>
-    <script>
-        var firstFunction = firebase.functions().httpsCallable("firstFunction");
-        firstFunction({v1: 3, v2: 4}).then(function(result) {
-            app.message = "Hello " + result.data.result;
-        })
-    </script>
 </body>
 
 </html>
